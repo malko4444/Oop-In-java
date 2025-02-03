@@ -1,5 +1,7 @@
 package com.zuabir.oop;
 
+import static com.zuabir.oop.Message.message;
+
 public class oop1 {
     public static void main(String[] args) {
         System.out.println("the hello word and the main data ");
@@ -12,9 +14,10 @@ public class oop1 {
 //        System.out.println(zubair.rno);
         //change the name of zuabnir
 
-        Student random = new Student(zubair);
-        System.out.println(random.name);
-        System.out.println(random.marks);
+//        Student random = new Student(zubair);
+//        System.out.println(random.name);
+//        System.out.println(random.marks);
+        message();
 //
     }
 }
@@ -47,3 +50,4 @@ class Student {
 
 
 }
+
