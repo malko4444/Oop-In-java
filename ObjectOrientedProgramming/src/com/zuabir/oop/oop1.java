@@ -3,11 +3,15 @@ package com.zuabir.oop;
 import static com.zuabir.oop.Message.message;
 
 public class oop1 {
+    protected String name = "Zuabir shehzad";
+
+
     public static void main(String[] args) {
         System.out.println("the hello word and the main data ");
         Student zubair = new Student(13,"zuabir shehzad",5.5f);
         Student zain = new Student();
         System.out.println(zain.name);
+
 
 //        System.out.println(zubair.name);
 //        System.out.println(zubair.marks);
@@ -49,5 +53,10 @@ class Student {
     }
 
 
+}
+class subClase extends oop1{
+    public subClase (String name, int age){
+        System.out.println("name "+name);
+    }
 }
 
