@@ -1,6 +1,10 @@
 package com.zuabir.oop.objectClass;
 
 public class ObjectClass {
+    int n ;
+    public ObjectClass(int num){
+        this.n = num;
+    }
     @Override
     protected Object clone() throws CloneNotSupportedException {
         return super.clone();
@@ -21,4 +25,9 @@ public class ObjectClass {
 //    protected void finalize() throws Throwable {
 //        super.finalize();
 //    }
+public static void main(String[] args) {
+    ObjectClass number = new ObjectClass(34);
+//    System.out.println(number.hashCode());
+    System.out.println(number.getClass());
+}
 }
