@@ -18,9 +18,11 @@ public class Car implements Brake,Engine {
         System.out.println("i stop like a normal car");
     }
 
+
+
     @Override
     public void accelerate() {
-        System.out.println("i accelerate like a normal car");
+        System.out.println("i accelerate like a normal car that are");
 
     }
 }
