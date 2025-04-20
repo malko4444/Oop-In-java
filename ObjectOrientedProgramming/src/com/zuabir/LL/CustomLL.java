@@ -35,7 +35,7 @@ public void insertFirst(int val){
         }
         head = head.next;
     }
-    
+
     public void insertInIndex (int val, int index){
         if (index >size){
 //            System.out.println("the link list is not have the index that you provided");
