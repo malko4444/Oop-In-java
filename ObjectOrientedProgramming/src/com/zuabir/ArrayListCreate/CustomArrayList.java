@@ -8,6 +8,7 @@ public class CustomArrayList {
     private int size = 0;
 
     public CustomArrayList() {
+
         this.data = new int[defaultSize];
     }
 
