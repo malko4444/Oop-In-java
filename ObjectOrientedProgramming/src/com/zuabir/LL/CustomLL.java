@@ -27,13 +27,44 @@ public void insertFirst(int val){
 
         size++;
     }
-    public void deleteFirst (){
-        if(head == tail){
-            head = head.next;
-            tail = tail.next;
+    public int deleteFirst (){
+        int val = head.value;
+        head = head.next;
+
+        if(head == null){
+            head = null;
+            tail = null;
 
         }
-        head = head.next;
+
+        return val;
+    }
+    public int deleteLast (){
+        if (size <= 1){
+            return deleteFirst();
+        }
+        Node secondLastNode = getNode(size-2);
+        int val = tail.value;
+        tail.value = secondLastNode.value;
+        tail.next = null;
+        return val;
+    }
+    public Node getNode (int index){
+        Node node = head;
+        for (int i = 0; i < index; i++) {
+            node = node.next;
+        }
+        return node;
+    }
+    public Node find (int value){
+        Node node = head;
+        while (node != null){
+            if(node.value == value){
+                return node;
+            }
+            node = node.next;
+        }
+        return null;
     }
 
     public void insertInIndex (int val, int index){
@@ -74,6 +105,19 @@ public void insertFirst(int val){
         tail = node;
 
         size++;
+    }
+    public int delete (int index){
+        if(index == 0 ){
+            return deleteFirst();
+        }
+        if (index == size-1){
+            return deleteLast();
+        }
+        Node pre = getNode(index-1 );
+        int val = pre.next.value;
+        pre.next = pre.next.next;
+
+        return val;
     }
 
 
