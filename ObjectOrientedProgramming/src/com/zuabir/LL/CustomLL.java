@@ -1,5 +1,7 @@
 package com.zuabir.LL;
 
+import javax.swing.*;
+
 public class CustomLL {
     private Node head;
     private Node tail;
@@ -7,6 +9,9 @@ public class CustomLL {
     public CustomLL(){
 
         this.size = 0;
+    }
+    public boolean isHappy(int n) {
+in
     }
     public void display (){
         Node temp = head;
@@ -119,6 +124,22 @@ public void insertFirst(int val){
 
         return val;
     }
+    public  void insertRec(int val ,int index ){
+        head = insertRec(val,index, head);
+
+        System.out.println(head.value);
+
+    }
+    private Node insertRec(int val , int index, Node node ){
+        if(index== 0){
+            Node temp = new Node(val, node);
+            size++;
+            return temp;
+        }
+        node.next = insertRec(val, index-1,node.next);
+        System.out.println("the node "+node.value);
+        return node;
+    }
 
 
     private class Node{
@@ -133,4 +154,32 @@ public void insertFirst(int val){
             this.next = next;
         }
     }
+//    count the cycle length in a cyclic linked list
+//
+//    public class Solution {
+//        public boolean hasCycle(ListNode head) {
+//
+//            ListNode fast = head ;
+//            ListNode slow = head;
+//            while(fast!= null && fast.next != null){
+//                fast = fast.next.next;
+//                slow = slow.next;
+//                if(fast == slow){
+//                    int count = 1 ;
+//                    slow = slow.next;
+//                    while(fast != slow ){
+//                        count++;
+//                        slow = slow.next;
+//
+//                    }
+//
+//                    return true;
+//                }
+//            }
+//            return false;
+//
+//        }
+//    }
+
 }
+
