@@ -10,9 +10,6 @@ public class CustomLL {
 
         this.size = 0;
     }
-    public boolean isHappy(int n) {
-in
-    }
     public void display (){
         Node temp = head;
         while(temp!= null){
@@ -177,6 +174,55 @@ public void insertFirst(int val){
 //                }
 //            }
 //            return false;
+//
+//        }
+//    }
+//    A  Happy number
+public boolean isHappy(int n) {
+    int slow = n;
+    int fast = n;
+    if(n == 1){
+        return true;
+    }
+    do{
+        slow = squareOfNumber(slow);
+        fast = squareOfNumber(squareOfNumber(fast));
+
+    }while (fast != slow);
+    if (fast == 1){
+        return true;
+    }
+    return false;
+}
+    private int squareOfNumber (int num){
+        int ans = 0 ;
+        while(num > 0){
+            int rem = num % 10;
+            ans = ans + (rem * rem);
+            num = num /10;
+        }
+        return ans;
+    }
+// find the middle of the LInked LIst using slow and fast pointer
+    /**
+     * Definition for singly-linked list.
+     * public class ListNode {
+     *     int val;
+     *     ListNode next;
+     *     ListNode() {}
+     *     ListNode(int val) { this.val = val; }
+     *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+     * }
+     */
+//    class Solution {
+//        public ListNode middleNode(ListNode head) {
+//            ListNode slow = head;
+//            ListNode fast = head ;
+//            while(fast!= null && fast.next!= null){
+//                slow = slow.next ;
+//                fast = fast.next.next;
+//            }
+//            return slow;
 //
 //        }
 //    }
