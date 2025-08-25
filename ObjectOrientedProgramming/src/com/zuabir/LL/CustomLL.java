@@ -149,6 +149,53 @@ public void insertFirst(int val){
         tail = node ;
         tail.next = null;
     }
+    public void reorderList(ListNode head) {
+        ListNode mid = findMiddle(head);
+        mid = mid.next;
+        ListNode firstHead = head;
+        ListNode secondHead = reverseList(mid);
+
+        while(firstHead != mid || secondHead != null){
+            ListNode temp = firstHead.next;
+            firstHead.next = secondHead;
+            firstHead = temp;
+            secondHead = secondHead.next;
+
+
+        }
+
+
+    }
+    private ListNode reverseList(ListNode head){
+        ListNode current = head ;
+        ListNode prev = null;
+        ListNode next = head.next;
+        while (current != null){
+            current.next = prev ;
+            prev = current ;
+            current = next ;
+            if (next != null ){
+                next = next.next;
+            }
+
+        }
+        return prev;
+
+    }
+    private ListNode findMiddle(ListNode head) {
+        if (head == null)
+            return null;
+
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next; // move by 1
+            fast = fast.next.next; // move by 2
+        }
+
+        return slow; // middle node
+    }
 
 private Node reverseUsingTraversal(Node head){
         Node present = head;
