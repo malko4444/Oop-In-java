@@ -182,6 +182,26 @@ public void insertFirst(int val){
         return prev;
 
     }
+    public ListNode reverseKGroup(ListNode head, int k) {
+        ListNode current = head ;
+        ListNode next = current.next;
+        ListNode prev = null;
+
+        for (int i = 0; i < k; i++) {
+
+            current.next = prev;
+            prev = current;
+            current = next;
+            if(next.next != null){
+                next = next.next;
+            }
+        }
+        ListNode newEnd = prev;
+        
+
+
+    }
+
     private ListNode findMiddle(ListNode head) {
         if (head == null)
             return null;
