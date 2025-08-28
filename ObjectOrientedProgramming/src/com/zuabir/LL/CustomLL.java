@@ -197,6 +197,7 @@ public void insertFirst(int val){
             }
         }
         ListNode newEnd = prev;
+        return newEnd;
         
 
 
