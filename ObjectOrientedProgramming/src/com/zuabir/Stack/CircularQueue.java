@@ -22,13 +22,13 @@ public class CircularQueue {
 
         return size== data.length;
     }
-    public  boolean insert (int item ){
-        if(isFull()){
-            return false;
-
-        }
-        data[end++] = item;
-        
-    }
+//    public  boolean insert (int item ){
+//        if(isFull()){
+//            return false;
+//
+//        }
+//        data[end++] = item;
+//
+//    }
 
 }
