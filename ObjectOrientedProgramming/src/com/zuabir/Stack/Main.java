@@ -1,6 +1,7 @@
 package com.zuabir.Stack;
 
 import java.util.Arrays;
+import java.util.Stack;
 
 public class Main {
     public static void main(String[] args)  {
@@ -26,6 +27,28 @@ public class Main {
         System.out.println(calculateNumber(x,a,b,0,0)-1);
 
 
+
+    }
+    public static boolean validPar(String s){
+        Stack<Character> stack = new Stack<>();
+
+        for(char ch : s.toCharArray()){
+            if(ch == '[' || ch=='(' ||ch=='{'){
+                stack.push(ch);
+            } else if (ch == stack.peek()) {
+                stack.pop();
+
+            }else {
+                return false;
+            }
+
+
+        }
+        if(stack.isEmpty()){
+            return true;
+        }else{
+            return false ;
+        }
 
     }
     public  static int calculateNumber(int x, int[] a, int[] b, int sum, int count) {
